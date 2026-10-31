@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#0b1120">
+<title>CSA Prospect Ultra | Command Center</title>
+<link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script>
+</head><body>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><div class="brand-mark">◈</div><div><strong>CSA<span> Prospect</span></strong><small>ULTRA / COMMAND CENTER</small></div></div>
+    <div class="nav-group-label">WORKSPACE</div>
+    <nav aria-label="Menu principal">
+      <button class="nav-link active" data-view="overview"><span class="ico">▦</span> Visão geral</button>
+      <button class="nav-link" data-view="operations"><span class="ico">⌘</span> Operações <span class="nav-pip" id="jobpip"></span></button>
+      <button class="nav-link" data-view="leads"><span class="ico">♧</span> Empresas e leads</button>
+      <button class="nav-link" data-view="ai"><span class="ico">✦</span> Conexões de IA</button>
+      <button class="nav-link" data-view="activity"><span class="ico">◷</span> Histórico</button>
+    </nav>
+    <div class="nav-group-label tools-title">RECURSOS</div>
+    <div class="info-nav"><span>◉</span><div><b>Processamento local</b><small>SQLite + Python, sem hospedagem</small></div></div>
+    <div class="sidebar-bottom"><div class="local-indicator"><span class="pulse"></span> AMBIENTE LOCAL <span class="subtle">127.0.0.1</span></div><div class="version">CSA Prospect Ultra • Painel v1.0</div></div>
+  </aside>
+  <div class="page">
+    <header class="topbar"><button class="mobile-menu" id="mobilemenu" aria-label="Abrir menu">☰</button>
+      <div class="breadcrumbs">Workspace <span>/</span> <strong id="breadcrumb">Visão geral</strong></div>
+      <div class="top-right"><span class="readonly">● Envios automáticos desativados</span><span class="avatar">CSA</span></div>
+    </header>
+    <main class="main">
+      <section class="view active" id="view-overview">
+        <div class="heading"><div><div class="eyebrow">INTELIGÊNCIA COMERCIAL EM TEMPO REAL</div><h1>Visão geral <span class="hi">.</span></h1><p>Acompanhe a jornada dos dados, da descoberta ao negócio fechado.</p></div><button class="btn primary" data-jump="operations">Iniciar operação <span>↗</span></button></div>
+        <div class="hero-stats" id="stats"><div class="skeleton"></div></div>
+        <div class="section-grid">
+          <article class="panel large"><div class="panel-head"><div><span class="overline">CONVERSÃO</span><h2>Funil de prospecção</h2></div><span class="chip">Dados reais do SQLite</span></div><div class="funnel-chart" id="funnelChart"><p class="muted">Carregando...</p></div></article>
+          <article class="panel"><div class="panel-head"><div><span class="overline">OPERAÇÃO</span><h2>Pipeline inteligente</h2></div><span class="icon-dot">✳</span></div><div class="pipeline-mini" id="pipelineMini"></div><button class="link-action" data-jump="operations">Gerenciar operações →</button></article>
+        </div>
+        <div class="section-grid"><article class="panel large"><div class="panel-head"><div><span class="overline">OPORTUNIDADES</span><h2>Sites com maior prioridade</h2></div><button class="soft-btn" data-jump="leads">Ver leads ↗</button></div><div id="topSites"></div></article>
+          <article class="panel"><div class="panel-head"><div><span class="overline">SINAIS TÉCNICOS</span><h2>Problemas frequentes</h2></div></div><div id="issuesChart" class="issues"></div></article></div>
+      </section>
+      <section class="view" id="view-operations"><div class="heading"><div><div class="eyebrow">EXECUÇÃO CONTROLADA</div><h1>Operações <span class="hi">.</span></h1><p>Execute cada etapa do pipeline. Apenas uma operação por vez.</p></div><span class="safe-chip">✓ Sem disparos comerciais</span></div>
+        <div class="section-grid"><article class="panel large"><span class="overline">FLUXO COMPLETO</span><h2>Escolha o processamento</h2><div class="operation-list">
+          <button class="op-card selected" data-action="auditar"><span class="op-icon">01</span><span><b>Auditar websites</b><small>HTTPS, SEO técnico, HTML, acessibilidade</small></span><span class="arrow">↗</span></button>
+          <button class="op-card" data-action="diagnosticar"><span class="op-icon">02</span><span><b>Diagnósticos com IA</b><small>Usa o cérebro configurado ao lado</small></span><span class="arrow">↗</span></button>
+          <button class="op-card" data-action="contatos"><span class="op-icon">03</span><span><b>Localizar contatos</b><small>E-mails funcionais e canais públicos</small></span><span class="arrow">↗</span></button>
+          <button class="op-card" data-action="sincronizar"><span class="op-icon">04</span><span><b>Sincronizar CRM</b><small>Leads elegíveis para revisão</small></span><span class="arrow">↗</span></button>
+          <button class="op-card" data-action="importar"><span class="op-icon">05</span><span><b>Importar CSV</b><small>Arquivo próprio ou base de demonstração</small></span><span class="arrow">↗</span></button>
+        </div></article>
+        <article class="panel"><span class="overline">CONFIGURAÇÃO</span><h2>Nova execução</h2><form id="jobform" class="stack"><div class="field"><label for="limit">Quantidade máxima</label><input id="limit" type="number" value="30" min="1" max="10000"></div><div class="field" id="workersBox"><label for="workers">Workers simultâneos</label><input id="workers" type="number" value="4" min="1" max="8"></div><div class="field" id="uploadBox" hidden><label for="csvUpload">Arquivo CSV (nome;site;cidade;estado)</label><input type="file" id="csvUpload" accept=".csv,text/csv"><small>Se não escolher um arquivo, importa o CSV de demonstração.</small></div><div class="field" id="campaignBox" hidden><label for="campaign">Nome da campanha</label><input id="campaign" value="CSA Geral" maxlength="100"></div><div class="note">O processamento acontece neste computador. Tarefas maiores podem consumir CPU, memória e rede.</div><button class="btn primary full" type="submit" id="startBtn">Iniciar processamento ↗</button></form></article></div>
+        <article class="panel log-panel"><div class="panel-head"><div><span class="overline">MONITORAMENTO</span><h2>Execução e logs</h2></div><button id="cancelJob" class="btn danger" disabled>Interromper tarefa</button></div><div class="job-status" id="jobstatus">Nenhuma tarefa em execução.</div><pre id="joblogs" class="terminal">Aguardando uma operação...</pre></article>
+      </section>
+      <section class="view" id="view-leads"><div class="heading"><div><div class="eyebrow">GESTÃO COMERCIAL</div><h1>Empresas e leads <span class="hi">.</span></h1><p>Revise diagnósticos, aprove oportunidades e acompanhe o funil.</p></div><button class="btn secondary" data-jump="operations">Atualizar base ↗</button></div>
+        <article class="panel"><div class="filters"><input id="leadSearch" placeholder="Pesquisar empresa ou domínio..." aria-label="Pesquisar leads"><select id="leadStatus" aria-label="Filtrar status"><option value="">Todos os status</option><option value="revisao">Em revisão</option><option value="aprovado">Aprovados</option><option value="contatado">Contatados</option><option value="respondeu">Respondeu</option><option value="reuniao">Reunião</option><option value="proposta">Proposta</option><option value="ganho">Ganhos</option><option value="perdido">Perdidos</option><option value="bloqueado">Bloqueados</option></select><span id="leadCount" class="muted">0 resultados</span></div>
+          <div class="table-scroll"><table class="leads-table"><thead><tr><th>Empresa / Domínio</th><th>Contato</th><th>Prioridade</th><th>Etapa</th><th>Ação</th></tr></thead><tbody id="leadsBody"><tr><td colspan="5">Carregando...</td></tr></tbody></table></div><div class="pagination"><button id="prevPage" class="soft-btn">← Anterior</button><span id="pageInfo">Página 1</span><button id="nextPage" class="soft-btn">Próxima →</button></div></article></section>
+      <section class="view" id="view-ai"><div class="heading"><div><div class="eyebrow">INTELIGÊNCIA E CONEXÕES</div><h1>Cérebro de IA <span class="hi">.</span></h1><p>Troque de modelo quando quiser. Credenciais não são gravadas em disco.</p></div><span class="safe-chip">◈ Multi-provedor</span></div>
+        <div class="ai-layout"><div><article class="panel"><div class="panel-head"><div><span class="overline">PROVEDOR ATIVO</span><h2>Escolher conexão</h2></div></div><div class="providers-grid" id="providerGrid"></div></article><article class="panel guide-panel"><span class="overline">INSTALAÇÃO LOCAL</span><h2>Conectar sua assinatura</h2><div class="guide-row"><span class="guide-num">1</span><div><b>Codex CLI</b><code>codex login</code><small>Entre com sua conta ChatGPT pelo fluxo oficial.</small></div></div><div class="guide-row"><span class="guide-num">2</span><div><b>Claude Code CLI</b><code>claude auth login</code><small>Entre com sua assinatura Claude pelo fluxo oficial.</small></div></div><div class="guide-row"><span class="guide-num">3</span><div><b>Modelos locais</b><code>ollama pull qwen3:1.7b</code><small>Sem cobrança de API, utiliza recursos locais.</small></div></div><p class="hint">O dashboard verifica se a CLI está instalada e autenticada, mas o login deve ser feito no terminal, nunca pelo painel.</p></article></div>
+        <article class="panel"><span class="overline">MODELO E CREDENCIAIS</span><h2>Configuração da execução</h2><form id="aiForm" class="stack"><div class="field"><label for="aiModel">Modelo exato</label><input id="aiModel" placeholder="Ex.: nome-do-modelo"></div><div class="field" id="baseURLBox" hidden><label for="aiBase">Endpoint compatível (HTTPS)</label><input id="aiBase" placeholder="https://api.exemplo.com/v1"></div><div class="field" id="keyBox" hidden><label for="aiKey">API key (somente em memória)</label><input id="aiKey" type="password" autocomplete="off" placeholder="Insira somente na hora de usar"><small>Não é guardada no SQLite ou no navegador após recarregar.</small></div><div class="field"><label for="aiLimit">Quantidade de diagnósticos</label><input type="number" id="aiLimit" min="1" max="10000" value="3"></div><div class="note" id="aiCostNote">Modo gratuito por regras. Não faz chamadas externas.</div><button type="button" class="btn secondary full" id="testProvider">Verificar conexão</button><button type="submit" class="btn primary full">Gerar diagnósticos ↗</button></form></article></div>
+      </section>
+      <section class="view" id="view-activity"><div class="heading"><div><div class="eyebrow">RASTREABILIDADE</div><h1>Histórico <span class="hi">.</span></h1><p>Atividades comerciais registradas no SQLite e processos da sessão.</p></div><button class="soft-btn" id="refreshHistory">Atualizar ↻</button></div><div class="section-grid"><article class="panel large"><span class="overline">EVENTOS COMERCIAIS</span><h2>Linha do tempo</h2><div id="eventTimeline" class="timeline"></div></article><article class="panel"><span class="overline">PROCESSOS</span><h2>Últimas operações</h2><div id="jobsHistory" class="timeline"></div></article></div></section>
+    </main>
+  </div>
+</div>
+<div class="modal-root" id="modalRoot" hidden><div class="shade" data-close="1"></div><div class="modal"><div class="modal-head"><div><span class="overline">REVISÃO HUMANA</span><h2 id="modalTitle">Lead</h2></div><button id="modalClose" aria-label="Fechar">✕</button></div><div id="modalContent"></div></div></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body></html>
