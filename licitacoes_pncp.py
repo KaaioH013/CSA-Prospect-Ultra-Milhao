@@ -36,7 +36,7 @@ TERMOS = {
     "sistema_informatizado": r"\bsistemas?\s+(?:informatizad\w*|de\s+informac\w*|de\s+gestao\b)",
     "licenciamento": r"\blicenciamento\s+(?:de\s+|do\s+|para\s+)?(?:uso\s+(?:de\s+)?)?(?:software\b|sistema\s+informatizad\w*\b)",
     "plataforma_digital": r"\bplataformas?\s+(?:digital\b|digitais|web\b|eletronica\b|eletronicas)\b",
-    "portal_web": r"\bportais?\s+(?:web\b|digitais|eletronicos|institucionais)\b",
+    "portal_web": r"\b(?:portal|portais)\s+(?:web\b|digital\b|digitais|eletronico\b|eletronicos|institucional\b|institucionais)\b",
     "ti": r"\btecnologia\s+da\s+informacao\b|\bsoluc\w*\s+(?:de|em)\s+ti\b|\bservic\w*\s+de\s+ti\b",
     "sustentacao": r"\bsustentac\w*\s+(?:de\s+)?sistemas?\b",
     "implantacao": r"\bimplantac\w*\s+(?:de\s+|do\s+)?(?:sistema\s+informatizad\w*|software\b|plataforma\s+digital\b)",
