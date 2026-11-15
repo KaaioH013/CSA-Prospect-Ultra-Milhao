@@ -34,6 +34,7 @@ class LicitacoesTests(unittest.TestCase):
         self.assertIn("software", classificar_objeto("Aquisição de SOFTWARE"))
         self.assertIn("desenvolvimento", classificar_objeto("Desenvolvimento de aplicações para o município"))
         self.assertIn("sistema_informatizado", classificar_objeto("Sistema informatizado de gestão pública"))
+        self.assertIn("portal_web", classificar_objeto("Desenvolvimento de portal web"))
         self.assertEqual(classificar_objeto("Manutenção do sistema de ar condicionado"), [])
         self.assertEqual(classificar_objeto("Sistema de tratamento de água"), [])
         self.assertEqual(classificar_objeto("Aquisição de computadores e monitores"), [])
