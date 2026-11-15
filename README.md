@@ -117,3 +117,10 @@ py -3 -m unittest discover -s tests -v
 Os testes também executam no GitHub Actions a cada push e pull request. Os provedores externos e o login real do Codex não são exercitados pela suíte offline. Para histórico técnico, comandos adicionais e restrições de cada módulo, consulte [documentação completa](docs/HISTORICO_E_DOCUMENTACAO_COMPLETA.md).
 
 **Licenciamento do código:** este repositório não inclui uma licença open source explícita. Ele é público para inspeção e avaliação; para redistribuição ou uso além do permitido por lei, peça autorização ao titular do projeto. Essa condição não substitui a licença própria dos dados OSM.
+
+
+## Extensão experimental: licitações de software no PNCP
+
+O coletor independente `licitacoes_pncp.py` permite consultar publicações do PNCP em todo o Brasil, filtrar objetos relacionados a software, deduplicar resultados e exportar um CSV. Ele usa banco próprio, **não altera o CRM, não usa credenciais e não envia propostas ou mensagens**.
+
+Documentação, comandos e limitações: [Coletor PNCP](docs/LICITACOES_PNCP.md). Essa primeira etapa ainda **não** faz leitura de PDFs, análise de habilitação ou consulta integrada ao Compras.gov.br.
