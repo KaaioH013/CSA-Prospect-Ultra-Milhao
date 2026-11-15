@@ -124,3 +124,9 @@ Os testes também executam no GitHub Actions a cada push e pull request. Os prov
 O coletor independente `licitacoes_pncp.py` permite consultar publicações do PNCP em todo o Brasil, filtrar objetos relacionados a software, deduplicar resultados e exportar um CSV. Ele usa banco próprio, **não altera o CRM, não usa credenciais e não envia propostas ou mensagens**.
 
 Documentação, comandos e limitações: [Coletor PNCP](docs/LICITACOES_PNCP.md). Essa primeira etapa ainda **não** faz leitura de PDFs, análise de habilitação ou consulta integrada ao Compras.gov.br.
+
+### Etapa 2: PNCP + Compras.gov.br (experimental)
+
+O novo `licitacoes_multifonte.py` consulta a API pública do Compras.gov.br, preserva os dados existentes da etapa 1 e exporta um CSV unificado por `numeroControlePNCP`. Executar o PNCP e o Compras.gov.br usa comandos distintos; não confundir os códigos de modalidade das duas APIs. O módulo não lê PDFs nem comprova que os prazos estão abertos.
+
+Instruções e limitações: [Licitações multifonte](docs/LICITACOES_MULTIFONTE.md).
