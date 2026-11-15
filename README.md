@@ -130,3 +130,9 @@ Documentação, comandos e limitações: [Coletor PNCP](docs/LICITACOES_PNCP.md)
 O novo `licitacoes_multifonte.py` consulta a API pública do Compras.gov.br, preserva os dados existentes da etapa 1 e exporta um CSV unificado por `numeroControlePNCP`. Executar o PNCP e o Compras.gov.br usa comandos distintos; não confundir os códigos de modalidade das duas APIs. O módulo não lê PDFs nem comprova que os prazos estão abertos.
 
 Instruções e limitações: [Licitações multifonte](docs/LICITACOES_MULTIFONTE.md).
+
+## Etapa 3: leitura de PDFs e apoio com IA para editais de software
+
+O módulo `licitacoes_documentos.py` consulta anexos oficiais do PNCP, extrai texto de PDFs, cria indícios rastreáveis por documento/página e oferece análise opcional por IA com autorização explícita para envio de trechos. **Não confirma habilitação nem substitui leitura integral.**
+
+Instruções e limites: [Documentos e análise dos editais](docs/LICITACOES_DOCUMENTOS.md). Usa `requirements-licitacoes-documentos.txt` e não altera o CRM ou o banco dos coletores.
